@@ -105,7 +105,7 @@ class UserAuthService {
                 'user-auth-token', jsonDecode(res.body)['data']['accessToken']);
 
             if (context.mounted) {
-              Navigator.pushNamed(context, UserHomeScreen.routeName);
+              Navigator.pushNamedAndRemoveUntil(context, UserHomeScreen.routeName, (route)=>false);
             }
           },
         );
@@ -180,7 +180,10 @@ class UserAuthService {
               context,
               "User logged out successfully.",
             );
-            Navigator.of(context).pushNamed(LoginPage.routeName);
+            Navigator.of(context).pushNamedAndRemoveUntil(
+              LoginPage.routeName,
+              (route) => false,
+            );
           },
         );
       }

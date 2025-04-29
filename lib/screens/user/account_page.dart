@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ev_charge/providers/user_provider.dart';
+import 'package:ev_charge/screens/user/my_reservations.dart';
 import 'package:ev_charge/screens/user/updates/update_image_page.dart';
 import 'package:ev_charge/screens/user/updates/update_password_page.dart';
 import 'package:ev_charge/screens/user/updates/update_user_details_page.dart';
@@ -64,8 +65,8 @@ class _UserAccountPageState extends State<UserAccountPage> {
           SizedBox(height: 50),
           Divider(thickness: 2, color: Colors.black),
           CustomTextbutton(
-            buttonText: 'Personal Details',
-            frontIcon: Icons.person_outline,
+            buttonText: 'Update Details',
+            frontIcon: Icons.person,
             onTap: () => Navigator.of(context)
                 .pushNamed(UpdateUserDetailsPage.routeName),
           ),
@@ -73,24 +74,23 @@ class _UserAccountPageState extends State<UserAccountPage> {
           CustomTextbutton(
             buttonText: 'Change Password',
             frontIcon: Icons.lock,
-            onTap: () =>
-                Navigator.of(context).pushNamed(UpdatePasswordPage.routeName),
+            onTap: () => Navigator.of(context)
+                .pushNamed(UpdateUserPasswordPage.routeName),
           ),
           Divider(thickness: 2, color: Colors.black),
           CustomTextbutton(
             buttonText: 'Update Image',
             frontIcon: Icons.image,
             onTap: () =>
-                Navigator.of(context).pushNamed(UpdateImagePage.routeName),
+                Navigator.of(context).pushNamed(UpdateUserImagePage.routeName),
           ),
           Divider(thickness: 2, color: Colors.black),
           CustomTextbutton(
-            buttonText: 'Notification Settings',
-            frontIcon: Icons.notifications,
-            onTap: () => getStations.getAllStations(context: context),
+            buttonText: 'My Reservations',
+            frontIcon: Icons.book,
+            onTap: () =>
+                Navigator.of(context).pushNamed(MyReservations.routeName),
           ),
-          Divider(thickness: 2, color: Colors.black),
-          CustomTextbutton(buttonText: 'Help', frontIcon: Icons.help),
           Divider(thickness: 2, color: Colors.black),
           CustomTextbutton(
             buttonText: 'Log Out',

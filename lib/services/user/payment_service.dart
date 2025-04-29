@@ -1,4 +1,4 @@
-import 'package:ev_charge/screens/reservation/booking_page.dart';
+import 'package:ev_charge/screens/reservation/user_booking_page.dart';
 import 'package:ev_charge/screens/user/home_screen.dart';
 import 'package:ev_charge/utils/show_snackbar.dart';
 import 'package:flutter/material.dart';
@@ -8,7 +8,7 @@ class PaymentService {
   String generateUniqueProductIdentity() {
     return DateTime.now()
         .millisecondsSinceEpoch
-        .toString(); // Timestamp as unique ID
+        .toString();
   }
 
   void makePayment({
@@ -17,8 +17,8 @@ class PaymentService {
     required int amount,
     required Function() onSuccess,
   }) {
+    print('here');
     String productIdentity = generateUniqueProductIdentity();
-    // Convert to paisa
 
     KhaltiScope.of(context).pay(
       config: PaymentConfig(
@@ -35,12 +35,20 @@ class PaymentService {
       },
       onFailure: (failureModel) {
         showSnackBar(context, 'Payment Failed. Try again.');
-        Navigator.of(context).pushNamed(BookingPage.routeName);
+        Navigator.of(context).pushNamed(UserBookingPage.routeName);
       },
       onCancel: () {
         showSnackBar(context, 'Payment Cancelled');
-        Navigator.of(context).pushNamed(BookingPage.routeName);
+        Navigator.of(context).pushNamed(UserBookingPage.routeName);
       },
     );
   }
 }
+
+/*
+Test Khalti ID for 9800000000 9800000001 9800000002 9800000003 9800000004 9800000005
+
+Test MPIN 1111
+
+Test OTP 987654
+*/

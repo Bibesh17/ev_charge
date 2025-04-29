@@ -1,6 +1,5 @@
 import 'package:ev_charge/constants/styling_variables.dart';
 import 'package:ev_charge/services/user/update_user.dart';
-import 'package:ev_charge/utils/show_snackbar.dart';
 import 'package:ev_charge/utils/custom_textfield.dart';
 import 'package:flutter/material.dart';
 
@@ -30,7 +29,7 @@ class UpdateUserDetailsPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Update Account'),
-        backgroundColor: const Color.fromARGB(255, 62, 182, 122),
+        backgroundColor: Color.fromARGB(248, 203, 243, 175),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 20),
