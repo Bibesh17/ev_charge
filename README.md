@@ -16,4 +16,4 @@ For help getting started with Flutter development, view the
 samples, guidance on mobile development, and a full API reference.
 
 
-A project prepared by Shreya Niraula , Bibesh pokharel and roman Basnet in 7th semester (2077 Batch) of mmamc Csit , Biratnagar
+A project prepared by Shreya Niraula , Bibesh pokharel and roman Basnet in 7th semester (2077 Batch) of MMAMC Csit , Biratnagar, Nepal
